@@ -6,7 +6,7 @@ import './Posts.css'
 
 const Posts = () => {
     const posts = useLoaderData();
-    console.log(posts);
+    /* console.log(posts); */
     return (
         <div>
             <h2>All Posts are here: {posts.length}</h2>
