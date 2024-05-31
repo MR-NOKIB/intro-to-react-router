@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
+import '../ActiveLink/ActiveLink.css'
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/About">About</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/posts">Posts</Link>
-            <Link to="/friends">Friends</Link>
+            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+            <NavLink to="/About" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink>
+            <ActiveLink to="/contact">Contact</ActiveLink>
+            <NavLink to="/posts" className={({ isActive }) => isActive ? "active" : ""}>Posts</NavLink>
+            <NavLink to="/friends" className={({ isActive }) => isActive ? "active" : ""}>Friends</NavLink>
         </nav>
     );
 };

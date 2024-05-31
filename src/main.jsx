@@ -64,6 +64,10 @@ const router = createBrowserRouter([
         element: <FriendDetail></FriendDetail>,
         loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
       },
+      {
+        path: '*',
+        element: <div>error: 404 page not found</div>
+      }
       
     ]
   }
